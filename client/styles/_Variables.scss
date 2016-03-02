@@ -1,0 +1,8 @@
+@mixin lowTier { z-index: 100; }
+@mixin midTier { z-index: 500; }
+@mixin highTier { z-index: 1000; }
+
+$NAV_HEIGHT: 70px;
+$PADDING_MOBILE: 60px;
+$NAV_HEIGHT_MOBILE: 50px;
+$MENU_ITEM_HEIGHT: 40px;

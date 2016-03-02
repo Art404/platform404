@@ -1,0 +1,40 @@
+.Squad {
+  width: 200px;
+  float: left;
+  clear: left;
+  border-top: 1px solid rgba(217,217,217,1);
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  padding-bottom: 10px;
+  padding-top: 3px;
+  background: white;
+}
+
+.Squad-member {
+  float: left;
+  width: 100%;
+  height: 25px;
+  line-height: 30px;
+  padding-left: 20px;
+  font-size: 1.5em;
+  color: #8A7D91;
+  font-family: 'Roboto', 'Helvetica';
+  font-weight: 400;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.Squad-about {
+  padding-left: 20px;
+  display: block;
+  font-size: 1.8em;
+  -webkit-margin-before: 0;
+  border-bottom: 1px solid #ccc;
+  font-weight: 600;
+  color: #1A0D1E;
+  font-size: 'neuzeit_groteskblack';
+  &:hover {
+    text-decoration: underline;
+  }
+}

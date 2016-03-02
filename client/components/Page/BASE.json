@@ -1,0 +1,112 @@
+[
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": false,
+        "framed": true,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": "http://api.art404.com/images/glass-panel.png",
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": true,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": true,
+        "framed": true,
+        "tall": false,
+        "landscape": true
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": "http://api.art404.com/images/glass-panel.png",
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": "http://api.art404.com/images/glass-panel.png",
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": false,
+        "framed": false,
+        "tall": false,
+        "landscape": false
+      }
+    }
+  },
+  {
+    "layout": {
+      "bgImage": null,
+      "cardLayout": {
+        "showInfo": true,
+        "framed": true,
+        "tall": false,
+        "landscape": true
+      }
+    }
+  }
+]

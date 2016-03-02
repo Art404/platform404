@@ -1,0 +1,112 @@
+[
+  {
+    "email":"manny@art404.com",
+    "fullname":"MANNY PALOU",
+    "image":"https://db.tt/TS1xpey3",
+    "name":"Manny",
+    "role":"Branding",
+    "shortBio":"Privileged Tech Bro Artist",
+    "skills":[
+      "javascript",
+      "reactjs",
+      "nodejs",
+      "css3",
+      "threejs",
+      "illustrator",
+      "photoshop",
+      "after effects",
+      "unity3d",
+      "copy",
+      "twitter"
+    ],
+    "social":{
+      "github":"https://github.com/manny404",
+      "instagram":"https://www.instagram.com/mannynotfound/",
+      "twitter":"http://twitter.com/artnotfound"
+    }
+  },
+  {
+    "email":"moises@art404.com",
+    "fullname":"MOISES SANABRIA",
+    "image":"https://db.tt/TS1xpey3",
+    "name":"Moises",
+    "role":"Production",
+    "shortBio":"Art automaton and digital plantation owner, who grew up part of the disenfranchised proletariat. Currently forming internet companies that create no concrete products and provide no viable services, with the hope of fulfilling an altruistic need to culture through data, art, and money. You can hire me for Concept, Art / Creative Direction and Full Stack Web Development for digital projects or campaigns. I'm originally from Venezuela, and I currently live and work in New York. I have worked on a variety of professional and personal projects for agencies, tech startups and artists all over the world. Full CV available on demand.",
+    "skills":[
+      "javascript",
+      "reactjs",
+      "nodejs",
+      "css3",
+      "threejs",
+      "illustrator",
+      "photoshop",
+      "after effects",
+      "unity3d",
+      "oculus",
+      "blender",
+      "concept",
+      "art direction",
+      "prototyping",
+      "storyboarding"
+    ],
+    "social":{
+      "github":"https://github.com/moises404",
+      "instagram":"https://www.instagram.com/artnotfound/",
+      "linked-in":"https://www.linkedin.com/in/moises404",
+      "tumblr":"http://projects404.tumblr.com",
+      "twitter":"http://twitter.com/tweetsnotfound"
+    }
+  },
+  {
+    "email":"alyssa@art404.com",
+    "fullname":"ALYSSA DAVIS",
+    "image":"https://db.tt/TS1xpey3",
+    "name":"Alyssa",
+    "role":"Engineering",
+    "shortBio":"Machine Learning & Hardware Engineer",
+    "skills":[
+      "javascript",
+      "css",
+      "matlab",
+      "calculus",
+      "physics",
+      "microcontrollers",
+      "circuit design",
+      "Hardware",
+      "machine learning",
+      "neural nets",
+      "image processing"
+    ],
+    "social":{
+      "github":"https://github.com/alyssa404",
+      "instagram":"https://www.instagram.com/alyssanotfound/",
+      "tumblr":"http://alyssa404.tumblr.com",
+      "twitter":"http://twitter.com/alyssanotfound"
+    }
+  },
+  {
+    "email":"micah@art404.com",
+    "fullname":"MICAH MILNER",
+    "image":"https://db.tt/TS1xpey3",
+    "name":"Micah",
+    "role":"Design",
+    "shortBio":"Designer and Illustrator",
+    "skills":[
+      "typography",
+      "vector illustration",
+      "hand illustration",
+      "photoshop",
+      "indesign",
+      "environmental design",
+      "fonts",
+      "graphic design",
+      "logo design",
+      "illustrator"
+    ],
+    "social":{
+      "behance":"https://www.behance.net/micahmilner",
+      "instagram":"https://www.instagram.com/micahnotfound/",
+      "twitter":"http://twitter.com/micahnotfound"
+    }
+  }
+]

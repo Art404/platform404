@@ -1,0 +1,55 @@
+.MenuMobile {
+  position: fixed;
+  top: $NAV_HEIGHT_MOBILE;
+  z-index: 999999;
+  height: 100vh;
+  width: 260px;
+  left: -260px;
+  @include transition(all, 1s, ease-in);
+  background: white;
+}
+
+.MenuMobile-link {
+  width: 100%;
+  float: left;
+  height: 50px;
+  line-height: 54px;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: inherit;
+  font-family: 'Roboto', 'open sans';
+  padding-left: $PADDING_MOBILE;
+}
+
+.MenuMobile-links {
+  float: left;
+  width: 100%;
+}
+
+.MenuMobile-icn {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  left: 5px;
+  margin: 5px 0 0 5px;
+  &.code {
+    background-image: url('../images/code_icon.png');
+  }
+  &.installation {
+    background-image: url('../images/installation_icon.png');
+  }
+  &.performance {
+    background-image: url('../images/performance_icon.png');
+  }
+  &.sculpture {
+    background-image: url('../images/sculpture_icon.png');
+  }
+  &.video {
+    background-image: url('../images/video_icon.png');
+  }
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,177 @@
+@import './_Squad';
+
+.Menu {
+  position: absolute;
+  left: 15px;
+  float: left;
+  font-family: "neuzeit_groteskblack";
+  font-size: 10px;
+  z-index: 99999999;
+  cursor: pointer;
+  top: $NAV_HEIGHT;
+  height: auto;
+}
+
+.Menu-inner {
+  position: relative;
+  width: 200px;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 5px;
+  background: white;
+}
+
+.Menu-item {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  height: $MENU_ITEM_HEIGHT;
+  background: white;
+}
+
+.Menu-link {
+  float: left;
+  text-transform: capitalize;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include display(flex);
+  @include align-items(center);
+  @include flex(1 0 0);
+  color: #8A7D91;
+  &:hover,
+  &.--active {
+    background: #1A0D1E;
+    color: white;
+  }
+}
+
+.Menu-submenu {
+  float: left;
+  width: calc(100% - 25px);
+  margin-left: 25px;
+  padding-top: 10px;
+}
+
+.Menu-submenu-link {
+  font-size: 18px;
+  line-height: 20px;
+  padding: 8px 12px 8px 23px;
+  color: black;
+  text-align: left;
+  float: left;
+  width: 100%;
+  &:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+}
+
+.Menu-return {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  background-color: #E2E2E2;
+  background-image: url('../images/arrow.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Menu-label {
+  font-family: 'Roboto', 'Open Sans', 'sans-serif';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Menu-item-icon-wrap {
+  position: relative;
+  width: 50px;
+  padding-right: 10px;
+  height: $MENU_ITEM_HEIGHT;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+// COLORS & ICONS
+
+.home  {
+  .Menu-label {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 17px;
+    font-size: 2.3em;
+  }
+  .Menu-link {
+    background: #231F20;
+    color: white;
+  }
+  .Menu-item-icon-wrap {
+    display: none;
+  }
+}
+
+.code {
+  .Menu-item-icon {
+    background-image: url('../images/code_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/code_icon_white.png');
+  }
+}
+
+.sculpture {
+  .Menu-item-icon {
+    background-image: url('../images/sculpture_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/sculpture_icon_white.png');
+  }
+}
+
+.installation {
+  .Menu-item-icon {
+    background-image: url('../images/installation_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/installation_icon_white.png');
+  }
+}
+
+.performance {
+  .Menu-item-icon {
+    background-image: url('../images/performance_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/performance_icon_white.png');
+  }
+}
+
+.video {
+  .Menu-item-icon {
+    background-image: url('../images/video_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/video_icon_white.png');
+  }
+}
+
+.Menu-item-icon {
+  display: block;
+  width: calc(#{$MENU_ITEM_HEIGHT} - 6px);
+  height: calc(#{$MENU_ITEM_HEIGHT} - 6px);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

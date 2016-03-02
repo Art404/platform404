@@ -1,0 +1,136 @@
+$BANNER_TITLE: 60px;
+
+.Banner-wrap {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  float: left;
+}
+
+.Banner {
+  width: 100%;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 200px;
+}
+
+.Banner .Carousel-wrap {
+  overflow: visible;
+  width: 465px;
+}
+
+.Banner .Carousel-slide {
+  width: 100% !important;
+  font-size: 12px !important;
+  &:before {
+    margin-right: 0;
+  }
+}
+
+.Banner .Carousel-control-wrap {
+  height: 290px;
+  z-index: 999;
+  background: rgba(0, 0, 0, .8);
+}
+
+.Banner-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.Banner .Carousel-control-wrap.prev .Carousel-control {
+  background-image: url('../images/whiteleft.png');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Banner .Carousel-control-wrap.next .Carousel-control {
+  background-image: url('../images/whiteright.png');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Banner-card {
+  width: 465px;
+  height: 290px;
+  display: inline-block;
+  position: relative;
+  &:before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    height: $BANNER_TITLE;
+    background: rgba(0, 0, 0, .6);
+  }
+}
+
+.Banner-info {
+  width: 100%;
+  height: 45px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  pointer-events: none;
+  @include display(flex);
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  font-size: 1em;
+  white-space: normal;
+  color: white;
+  text-align: center;
+  font-weight: lighter;
+  width: 90%;
+  height: 25px;
+  display: inline;
+  float: left;
+  margin: 0;
+}
+
+.Banner-title {
+  position: absolute;
+  height: $BANNER_TITLE;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  text-decoration: none;
+  pointer-events: none;
+  font-family: "neuzeit_groteskblack";
+  text-transform: uppercase;
+  font-size: 1.5em;
+  white-space: normal;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bolder;
+  width: 100%;
+  z-index: 9999;
+}
+
+.Banner-title, 
+.Banner-card:before {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.--active .Banner-title,
+.--active .Banner-card:before {
+  opacity: 1;
+}
