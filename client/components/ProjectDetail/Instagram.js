@@ -28,7 +28,7 @@ class Instagram extends React.Component {
     const postUrl = this.props.embed
 
     request
-      .get(`${process.env.API || http://localhost:3000/api}/getInsta?url=${postUrl}`)
+      .get(`${process.env.API || 'http://localhost:3000/api'}/getInsta?url=${postUrl}`)
       .end((err, res) => {
         if (err) console.error(err)
         else {
