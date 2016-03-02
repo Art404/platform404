@@ -14,7 +14,9 @@ export default function reactMiddleware (req, res) {
   match({routes, location}, (error, redirectLocation, renderProps) => {
     if (error) return res.status(500).send(error.message)
     if (redirectLocation) return res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-    if (!renderProps) return res.status(404).send('Not Found')
+    if (!renderProps && location.path !== '/') return res.redirect(302, '/')
+    if (!renderProps) return res.status(404).send('Art404 is currently 404\'d, lol. Drag @artnotfound on Twitter if you see this.')
+
 
     const assets = require('../../build/assets.json')
     const store = configureStore()
