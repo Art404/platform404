@@ -25,7 +25,7 @@ class Instagram extends React.Component {
 
   createInstagram () {
     const postUrl = this.props.embed
-    const {protocol, hostname, port} = window.location;
+    const {protocol, hostname, port} = window.location
 
     request
       .get(`${protocol}//${hostname}:${port}/api/getInsta?url=${postUrl}`)
