@@ -1,8 +1,5 @@
 import * as types from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
-import http from 'http'
-
-const agent = new http.Agent({ keepAlive: true })
 
 export function toggleSidebar (sideOpen) {
   return (dispatch) => {
