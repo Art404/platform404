@@ -1,0 +1,275 @@
+.App-content > *:first-child.ProjectDetail-outer-container.--desktop {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  text-align: center;
+}
+
+
+.ProjectDetail-inner-container {
+  display: inline-block;
+  min-width: 760px;
+}
+
+.ProjectDetail-main-content {
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.27);
+  -moz-box-shadow: 0 0 6px rgba(0,0,0,0.27);
+  box-shadow: 0 0 6px rgba(0,0,0,0.27);
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 100px 0 0 0;
+  padding: 20px;
+  width: 720px;
+}
+
+.ProjectDetail-profile {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  @include display(flex);
+  > * {
+    @include flex(1);
+  }
+}
+
+.ProjectDetail-profile-image {
+  position: relative;
+  @include flex(1);
+}
+
+.ProjectDetail-profile img {
+  width: 100%;
+  height: auto;
+}
+
+.ProjectDetail-wrapper {
+  min-height: 150px;
+  padding: 10px 10px 10px 20px;
+  position: relative;
+  text-align: left;
+}
+
+.ProjectDetail-title {
+  color: #212121;
+  font-size: 30px;
+  margin: 0 30px 10px 0;
+  width: 100%;
+  text-align: left;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+.ProjectDetail-tags {
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+  padding-right: 40px;
+}
+
+.ProjectDetail-tag {
+  float: left;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.ProjectDetail-profile-info {
+  position: relative;
+}
+
+.ProjectDetail-source {
+  font-size: 11px;
+  color: #555;
+  position: relative;
+  @include justify-content(flex-end);
+  @include display(flex);
+  @include align-items(center);
+  @include flex(1);
+  margin-right: 20px;
+  .Card-link-container {
+    position: relative;
+    bottom: auto;
+    top: 1px;
+    right: auto;
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+.ProjectDetail-source-link {
+  color: inherit;
+}
+
+.ProjectDetail-description {
+  float: left;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.ProjectDetail-links {
+  position: absolute;
+  bottom: 10px;
+  @include display(flex);
+  width: 100%;
+}
+
+.ProjectDetail-project-link {
+  border-radius: 4px;
+  background-color: rgb(104, 159, 56);
+  font-size: 13px;
+  font-weight: normal;
+  height: 30px;
+  display: inline-block;
+  line-height: 30px;
+  color: white;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.ProjectDetail-related-header {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ProjectDetail-related {
+  margin-left: 40px;
+  width: auto;
+  float: right;
+  margin-top: 100px;
+  width: 330px;
+}
+
+.ProjectDetail-related .Card {
+  margin: 0 0 10px 0;
+  display: block;
+}
+
+.ProjectDetail-similiar {
+  color: #757575;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 100;
+  float: left;
+}
+
+.ProjectDetail-see-more {
+  line-height: 30px;
+  float: right;
+  background-color: #689f39;
+  color: white;
+  font-weight: 700;
+  height: 30px;
+  padding: 0 13px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.ProjectDetail-additional {
+  border-top: 1px solid #eaeaee;
+  padding-top: 30px;
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+.ProjectDetail-additional-title {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.ProjectDetail-embeds {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ProjectDetail-add-title {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+
+.ProjectDetail-collabs, 
+.ProjectDetail-press {
+  display: inline-block;
+  padding: 10px 15px 10px 0;
+  vertical-align: top;
+  width: 170px;
+}
+
+.ProjectDetail-publication,
+.ProjectDetail-collabee {
+  display: block;
+  font-size: 13px;
+  font-weight: 300;
+  color: #333;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.ProjectDetail-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.ProjectDetail-video iframe {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+/* CSS HACKS TO FORCE CARD LAYOUT CHANGES */
+@media (max-width: 1350px) and (min-width: 1151px) {
+  .--desktop {
+    .ProjectDetail-related {
+      width: 170px;
+    }
+    .ProjectDetail-related .Card {
+      min-width: 170px;
+      min-height: 236px;
+      @include flex-direction(column);
+    }
+    .ProjectDetail-related .Card.--landscape .Card-flex-container {
+      float: left;
+      width: 100%;
+      min-height: 65px;
+      max-height: 65px;
+    }
+    .ProjectDetail-related .Card-info-container {
+      display: none;
+    }
+  } 
+}
+
+@media (max-width: 1150px) {
+  .--desktop {
+    .ProjectDetail-related {
+      width: 720px;
+      float: none;
+      margin: 0 auto;
+    }
+    .ProjectDetail-related .Card {
+      margin-right: 10px;
+      float: left;
+      max-width: calc(50% - 5px);
+      min-width: calc(50% - 5px);
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+}

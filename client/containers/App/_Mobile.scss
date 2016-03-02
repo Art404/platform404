@@ -1,0 +1,255 @@
+.--mobile {
+  .Navigation {
+    position: fixed;
+    & ~ .App-content {
+      padding-top: $NAV_HEIGHT;
+    }
+  }
+
+  .Navigation-logo {
+    left: auto;
+    width: 100%;
+    @include display(flex);
+    @include align-items(center);
+  }
+
+  .Navigation-logo a {
+    float: none;
+    width: 250px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .Navigation-github-icn {
+    opacity : 1;
+  }
+
+  .Navigation,
+  .Navigation-logo,
+  .Navigation-menu-btn,
+  .Navigation-github {
+    height: $NAV_HEIGHT_MOBILE;
+  }
+
+  max-width: 100vw;
+  overflow: hidden;
+  .Banner {
+    padding-left: 0;
+  }
+
+  .Banner-card {
+    width: 100%;
+    height: 212px;
+  }
+
+  .Card-img {
+    display: table !important;
+    position: relative !important;
+    right: -50% !important;
+    overflow: visible !important;
+  }
+  .Card-img img {
+    height: 100% !important;
+    position: relative !important;
+    left: -50% !important;
+    display: block !important;
+  }
+  .Card.--framed.--landscape .Card-img {
+    display: table !important;
+    position: relative !important;
+    right: -50% !important;
+    overflow: visible !important;
+    height: 100% !important;
+  }
+  .Card.--framed.--landscape .Card-img img {
+    height: 100% !important;
+    position: relative !important;
+    left: -60% !important;
+    display: block !important;
+    height: 100% !important;
+  }
+  .Carousel {
+    width: 90%;
+  }
+
+  .Banner {
+    @include display(flex);
+    @include justify-content(center);
+    width: 100vw;
+  }
+
+  .Banner .Carousel-wrap {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .Banner-wrap {
+    height: 212px;
+  }
+
+  .Banner .Carousel-control-wrap {
+    height: 212px;
+  }
+
+  .Row-header {
+    width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .Row-cards {
+    padding-left: 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0, 0, 0);
+    overflow: visible;
+  }
+
+  .Row-cards-list {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 20px;
+    padding-right: 570px;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .Row.--hasBG .Row-cards-list {
+    padding-left: 150px;
+  }
+
+  .Grid {
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .Grid .Card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .ProjectDetail-main-content {
+    width: 90%;
+    margin: 0 auto;
+    display: table;
+  }
+
+  .ProjectDetail-profile {
+    @include flex-direction(column);
+  }
+
+  .ProjectDetail-profile-image,
+  .ProjectDetail-wrapper,
+  .ProjectDetail-description {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .ProjectDetail-description {
+    float: none;
+  }
+
+  .ProjectDetail-inner-container {
+    width: 100%;
+    min-width: 0;
+    min-width: 0;
+  }
+
+  .ProjectDetail-outer-container .Carousel {
+    float: none;
+    margin: 40px auto;
+  }
+
+  .ProjectDetail-related {
+    float: none;
+    width: 90%;
+    margin: 20px auto;
+    display: table;
+  }
+  .ProjectDetail-related .Card {
+    width: 50%;
+    display: inline-block;
+    min-width: calc(50% - 5px);
+    &:nth-child(odd) {
+      margin-right: 10px;
+    } 
+  }
+  .About {
+    width: 100%;
+    position: relative;
+    min-width: 0;
+    padding: 20px;
+  }
+  
+  .About-blurb {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .About-member {
+    min-width: 0;
+    width: 50%;
+    font-size: .8em;
+    break-word: break-all;
+  }
+
+  .About .Grid {
+    position: relative;
+    left: -20px;
+  }
+
+  .Row-header ul {
+    width: 70%;
+  }
+
+  .Squad {
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+    background: #f5f5f5;
+    color: inherit;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .Squad-member {
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    padding-left: $PADDING_MOBILE;
+    font-size: 18px;
+    color: inherit;
+  }
+  
+  .Squad-about {
+    float: left;
+    font-size: 1.1em;
+    padding-top: 10px;
+    width: 100%;
+    padding-left: $PADDING_MOBILE;
+  }
+}
+
+@media (max-width: 600px) {
+  .--mobile {
+    .ProjectDetail-related .Card {
+      width: 100%;
+      float: left;
+      display: block;
+      min-width: 100%;
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+    }
+    .Navigation-github-text {
+      display: none;
+    }
+  }
+}
+

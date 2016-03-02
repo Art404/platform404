@@ -1,0 +1,185 @@
+@import './_Squad';
+
+.Menu {
+  position: absolute;
+  left: 0;
+  float: left;
+  font-family: "neuzeit_groteskblack";
+  font-size: 10px;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 99999999;
+  // background: rgba(245, 245, 245, 0.95);
+  cursor: pointer;
+  top: $NAV_HEIGHT;
+  height: auto;
+  background: white;
+}
+
+.Menu-inner {
+  position: relative;
+  width: 200px;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: white;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  margin-bottom: 3px;
+}
+
+.Menu-item {
+  width: 100%;
+  position: absolute;
+  background: white;
+  z-index: 10;
+  height: $MENU_ITEM_HEIGHT;
+}
+
+.Menu-link {
+  float: left;
+  text-transform: capitalize;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include display(flex);
+  @include align-items(center);
+  @include flex(1 0 0);
+  color: black;
+  &:hover,
+  &.--active {
+    background: black;
+    color: white;
+  }
+}
+
+.Menu-submenu {
+  float: left;
+  width: calc(100% - 25px);
+  margin-left: 25px;
+  padding-top: 10px;
+}
+
+.Menu-submenu-link {
+  font-size: 18px;
+  line-height: 20px;
+  padding: 8px 12px 8px 23px;
+  color: black;
+  text-align: left;
+  float: left;
+  width: 100%;
+  &:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+}
+
+.Menu-return {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  background-color: #E2E2E2;
+  background-image: url('../images/arrow.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Menu-label {
+  font-family: "Open Sans", 'sans-serif';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Menu-item-icon-wrap {
+  position: relative;
+  width: 70px;
+  height: $MENU_ITEM_HEIGHT;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+// COLORS & ICONS
+
+.home  {
+  .Menu-label {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .Menu-link {
+    background: black;
+    color: white;
+  }
+  .Menu-item-icon-wrap {
+    display: none;
+  }
+}
+
+.code {
+  .Menu-item-icon {
+    background-image: url('../images/apps_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/apps_icon_white.png');
+    border: 3px solid white;
+  }
+}
+
+.sculpture {
+  .Menu-item-icon {
+    background-image: url('../images/sculptures_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/sculptures_icon_white.png');
+    border: 3px solid white;
+  }
+}
+
+.installation {
+  .Menu-item-icon {
+    background-image: url('../images/installations_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/installations_icon_white.png');
+    border: 3px solid white;
+  }
+}
+
+.performance {
+  .Menu-item-icon {
+    background-image: url('../images/performance_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/performance_icon_white.png');
+    border: 3px solid white;
+  }
+}
+
+.video {
+  .Menu-item-icon {
+    background-image: url('../images/videos_icon.png');
+  }
+  .Menu-link:hover .Menu-item-icon,
+  .Menu-link.--active .Menu-item-icon {
+    background-image: url('../images/videos_icon_white.png');
+    border: 3px solid white;
+  }
+}
+
+.Menu-item-icon {
+  display: block;
+  width: calc(#{$MENU_ITEM_HEIGHT} - 10px);
+  height: calc(#{$MENU_ITEM_HEIGHT} - 10px);
+  border-radius: 50%;
+  border: 3px solid black;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

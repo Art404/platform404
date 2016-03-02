@@ -1,0 +1,71 @@
+.About {
+  min-width: 960px;
+  padding: 40px 50px 0 250px;
+  max-width: 1645px;
+}
+
+.About-blurb {
+  width: 50%;
+  color: #555;
+  font-weight: 400;
+  font-size: 1.1em;
+  min-width: 800px;
+}
+
+.About-press-link {
+  cursor: pointer;
+  color: #db097d;
+  font-weight: 700;
+  &:hover {
+    text-decoration: underline;
+  }
+  .About-grammar {
+    color: #555;
+  }
+}
+
+.About .Grid {
+  margin-top: 40px;
+  padding: 0;
+}
+
+.About-filter {
+  margin-top: 20px;
+  font-size: .8em;
+  font-weight: 300;
+}
+
+.About-filter-remove {
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+}
+
+.About-contact,
+.About-squad,
+.About-member {
+  margin-bottom: 20px;
+}
+
+.About-member {
+  min-width: 200px;
+  display: inline-block;
+}
+
+.About-member-role {
+  font-weight: 700;
+}
+
+.About-linkouts {
+  margin-top: 10px;
+}
+
+.About-linkout {
+  color: inherit;
+  display: block;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+

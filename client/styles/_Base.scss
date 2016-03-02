@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'neuzeit_groteskblack';
+  src: url('fonts/neuzit.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: black;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.375;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  float: left;
+  font-size: 16px;
+  background: white;
+}

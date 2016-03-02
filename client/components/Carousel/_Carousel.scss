@@ -1,0 +1,48 @@
+$button-width: 30px;
+$button-height: 60px;
+$controlWidth: 50px;
+$timing: cubic-bezier(0.365, 0.450, 0.230, 0.950);
+@import './_Controls';
+@import './_Slide';
+
+.Carousel {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.Carousel-wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 0;
+  box-sizing: border-box;
+  padding-right: $controlWidth;
+  padding-left: $controlWidth;
+  overflow: hidden;
+}
+
+.Carousel-slides {
+  position: absolute;
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.Carousel-slide-wrap {
+  overflow: hidden;
+  float: left;
+  height: 100%;
+  background-color: #FAFAFA;
+  position: relative;
+  -webkit-touch-callout: none;
+}
+
+.Carousel-slide img {
+  height: 100%;
+  width: auto;
+}

@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Art404
+    meta(property='og:title', content='Art404')
+    meta(property='og:description', content='Art404 is an artup company based in New York City making works across conceptual art, interactive web apps, installation, performance and branding.')
+    meta(property='og:url', content='http://art404.com')
+    meta(property='og:site_name', content='Art404')
+    meta(property='og:type', content='website')
+    meta(property='og:image', content='http://api.art404.com/logo404.png')
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='@artnotfound')
+    meta(name='twitter:creator', content='@artnotfound')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href=assets.main.css)
+  body
+    #root!= content
+    script.
+      window.__INITIAL_STATE__ = !{initialState}
+    script(src="https://platform.instagram.com/en_US/embeds.js")
+    script.
+      window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function(f) {
+      t._e.push(f);
+      };
+      return t;}(document, "script", "twitter-wjs"))
+    script(src=assets.main.js)
