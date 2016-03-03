@@ -1,4 +1,4 @@
-if (process.env.BROWSER) require('../../styles/_Main.scss');
+if (process.env.BROWSER) require('../../styles/_Main.scss')
 import * as AppActions from '../../actions/AppActions'
 import React, {Component, PropTypes, cloneElement} from 'react'
 import {bindActionCreators} from 'redux'
@@ -11,7 +11,7 @@ import MenuMobile from '../../components/Menu/MenuMobile'
 
 export class App extends Component {
   constructor (props, context) {
-    super(props, context);
+    super(props, context)
     this.state = {
       'fixed': false
     }

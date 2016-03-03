@@ -1,9 +1,9 @@
-import AssetsPlugin from 'assets-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import path from 'path';
-import webpack from 'webpack';
+import AssetsPlugin from 'assets-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import path from 'path'
+import webpack from 'webpack'
 
-const DEBUG = process.env.NODE_ENV !== 'production';
+const DEBUG = process.env.NODE_ENV !== 'production'
 
 export default {
   entry: DEBUG ? ['webpack-hot-middleware/client', './index.js'] : './index.js',
@@ -64,4 +64,4 @@ export default {
       new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
   ]
-};
+}
