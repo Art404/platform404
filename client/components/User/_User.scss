@@ -1,15 +1,10 @@
 .User {
-  width: 100%;
-  padding: 0 50px 0 250px;
+  padding: 0 20px 0 500px;
   top: -40px;
   position: relative;
   overflow: visible;
-  min-width: 1350px;
-
-  @media (max-width: 900px) {
-    background: red;
-    min-width: 800px;
-  }
+  max-width: 1350px;
+  min-width: 960px;
 }
 .User-section-title {
   -webkit-margin-before: 0;
@@ -18,25 +13,18 @@
   padding: 0;
   color: #1A0D1E;
   font-family: 'neuzeit_groteskblack';
+  z-index: 20;
 }
 
 .User-profile-img {
-	position: relative;
+  position: absolute;
   top: -12px;
   width: 275px;
   height: 717px;
   z-index: 10;
-  float: left;
+  left: 235px;
   display: inline-block;
-
-  @media (max-width: 900px) {
-    top: 0;
-    width: 180px !important;
-    height: 420px !important;
-    background-size: contain !important;
-    background: yellow;
-    background-repeat: no-repeat;
-  }
+  z-index: 100;
 }
 
 .User-blurb {
@@ -44,23 +32,16 @@
   font-weight: 400;
   font-size: 1.1em;
   position: relative;
-  display: inline-block;
-  float: left;
-  width: 725px;
+  width: 100%;
   z-index: 20;
   margin-left: 30px;
-  padding-top: 30px;
+  padding: 30px 50px 0 0;
   font-family: 'Roboto-regular', 'Open Sans';
+  height: auto;
 
   .User-section-title {
     font-size: 2em;
     margin-bottom: -5px;
-   }
-
-   @media (max-width: 900px) {
-     width: 320px;
-     height: 430px;
-     background: lime;
    }
 }
 
@@ -69,6 +50,8 @@
   -webkit-margin-after: 0;
   height: 222px;
   color: #8A7D91;
+  display: table;
+  padding-bottom: 15px;
 }
 
 .User-skills {
@@ -78,6 +61,12 @@
   position: relative;
   float: left;
   padding-left: 30px;
+  margin-right: 240px;
+  
+
+  @media (max-width: 1500px) {
+    margin-right: 0;
+  }
   
   .User-section-title {
     line-height: 1.1em;
@@ -85,11 +74,13 @@
     color: white;
     display: block;
     padding-top: 20px;
+    z-index: 50;
   }
 }
 
 .User-skills-single {
-  font-weight: bold;
+  cursor: pointer;
+  font-weight: 700;
   font-size: 1.3em;
   position: relative;
   display: inline-block;
@@ -101,12 +92,6 @@
   padding: 2px 20px 2px 10px;
 
   &:hover { cursor: auto; }
-}
-
-.User-skills-single {
-  
-  cursor: pointer;
-  font-weight: 700;
 }
 
 .User-social {
@@ -139,6 +124,8 @@
   }
 }
 .User-contact {
+  margin-bottom: 20px;
+  padding-left: 25px;
   height: 145px;
   position: relative;
   float: left;
@@ -200,38 +187,13 @@
 .User-background {
   position: absolute;
   display: block;
-  width: 100%;
-  height: 250px;
-  left: 0;
-  top: 300px;
+  width: 100vw;
+  height: 100%;
+  left: -500px;
+  top: 0;
   z-index: 0;
-  background-image: url(https://db.tt/Iz5K4iCL);
+  background-image: url(https://db.tt/xvtoOegQ);
   background-size: cover;
   background-position: center;
-}
-
-.--mobile {
-  .User {
-    width: 100%;
-    position: relative;
-    min-width: 0;
-    padding: 20px;
-  }
-  
-  .User-blurb {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .User-member {
-    min-width: 0;
-    width: 50%;
-    font-size: .8em;
-    break-word: break-all;
-  }
-
-  .User .Grid {
-    position: relative;
-    left: -20px;
-  }
+  background-repeat: no-repeat;
 }
