@@ -1,24 +1,34 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import Logo from '../Logo/Logo'
 import {Link} from 'react-router'
-
-const toggleSidebar = () => 'lol'
+import {size} from 'lodash'
 
 class Navigation extends React.Component {
-  static displayName = 'Navigation';
+  static displayName = 'Navigation'
+
+  static contextTypes = {
+    'client': PropTypes.object
+  }
 
   static propTypes = {
-    'agent': React.PropTypes.string,
-    'actions': React.PropTypes.object,
-    'sideOpen': React.PropTypes.bool
-  };
+    'actions': PropTypes.object,
+    'sideOpen': PropTypes.bool,
+    'db': PropTypes.object
+  }
+
+  constructor (props, context) {
+    super(props, context)
+  }
 
   closeMenu (sideOpen) {
     if (sideOpen) this.props.actions.toggleSidebar(!sideOpen)
   }
 
   render () {
-    const {agent, sideOpen, actions} = this.props
+    const {sideOpen, actions, db} = this.props
+    const {agent, cookie} = this.context.client
+    const {projectsSeen} = cookie
+    const hasProjects = agent === 'desktop' && projectsSeen && projectsSeen.length
 
     return (
       <nav className="Navigation">
@@ -31,10 +41,13 @@ class Navigation extends React.Component {
             <Logo />
           </Link>
         </div>
+        {hasProjects ?
+          <div className="Navigation-projects-seen">
+            <span className="Navigation-projects-btn">
+              {`PROJECTS SEEN: ${cookie.projectsSeen.length} / ${size(db)}`}
+            </span>
+          </div> : null}
         <a className="Navigation-github" href="http://github.com/art404/platform404" target="_blank">
-          <div className="Navigation-github-text">
-            {'View on GitHub'}
-          </div>
           <div className='Navigation-github-icn' />
         </a>
       </nav>

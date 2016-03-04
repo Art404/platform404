@@ -2,6 +2,7 @@ import api from './api'
 import compression from 'compression'
 import config from '../webpack.config.babel'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 import express from 'express'
 import morgan from 'morgan'
 import path from 'path'
@@ -13,6 +14,7 @@ const DEFAULT_PORT = 3000
 const server = express()
 
 server.use(cors())
+server.use(cookieParser())
 server.set('env', DEBUG ? 'development' : 'production')
 server.set('port', process.env.PORT || DEFAULT_PORT)
 server.set('views', path.resolve(__dirname, 'views'))

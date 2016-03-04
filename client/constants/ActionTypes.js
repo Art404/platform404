@@ -1,2 +1,3 @@
 export const FETCH_FIRE_SUCCESS = 'FETCH_FIRE_SUCCESS'
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
+export const SET_CLIENT = 'SET_CLIENT'
