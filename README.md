@@ -26,7 +26,7 @@ $ npm install
 Start development server:
 
 ```bash
-$ npm run start:dev
+$ npm run firebase_url=XXX start:dev
 ```
 
 Start production server:
@@ -374,6 +374,6 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 
 # Future
 
-* Cookie based "seen" projects with total counter
+~~* Cookie based "seen" projects with total counter~~
 * Dynamically change database source with special route
 * More banner + row + card types
