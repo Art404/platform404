@@ -15,6 +15,13 @@
   position: relative;
 }
 
+.Card.--seen {
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .Card-flex-container {
   @include display(flex);
   @include flex-direction(column);

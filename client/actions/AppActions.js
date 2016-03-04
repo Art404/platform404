@@ -1,6 +1,12 @@
 import * as types from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 
+export function setClient (client) {
+  return (dispatch) => {
+    return dispatch({'type': types.SET_CLIENT, 'client': client})
+  }
+}
+
 export function toggleSidebar (sideOpen) {
   return (dispatch) => {
     return dispatch({'type': types.TOGGLE_SIDEBAR, 'sideOpen': sideOpen})
@@ -8,7 +14,7 @@ export function toggleSidebar (sideOpen) {
 }
 
 export function fetchFireSuccess (json) {
-  return {'type': types.FETCH_FIRE_SUCCESS, 'fire': json};
+  return {'type': types.FETCH_FIRE_SUCCESS, 'fire': json}
 }
 
 export function fetchFire () {
