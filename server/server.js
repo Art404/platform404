@@ -36,7 +36,7 @@ if (DEBUG) {
   server.use(webpackHotMiddleware(compiler))
 } else {
   server.use(express.static(path.resolve(__dirname, '../build')))
-  //server.use(morgan('combined'))
+  server.use(morgan('combined'))
 }
 
 server.use('/api', api)
