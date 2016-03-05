@@ -6,18 +6,10 @@ import {size} from 'lodash'
 class Navigation extends React.Component {
   static displayName = 'Navigation'
 
-  static contextTypes = {
-    'client': PropTypes.object
-  }
-
   static propTypes = {
     'actions': PropTypes.object,
     'sideOpen': PropTypes.bool,
     'db': PropTypes.object
-  }
-
-  constructor (props, context) {
-    super(props, context)
   }
 
   closeMenu (sideOpen) {
@@ -25,8 +17,8 @@ class Navigation extends React.Component {
   }
 
   render () {
-    const {sideOpen, actions, db} = this.props
-    const {agent, cookie} = this.context.client
+    const {sideOpen, actions, db, client} = this.props
+    const {agent, cookie} = client
     const {projectsSeen} = cookie
     const hasProjects = agent === 'desktop' && projectsSeen && projectsSeen.length
 
@@ -44,7 +36,7 @@ class Navigation extends React.Component {
         {hasProjects ?
           <div className="Navigation-projects-seen">
             <span className="Navigation-projects-btn">
-              {`PROJECTS SEEN: ${cookie.projectsSeen.length} / ${size(db)}`}
+              {`PROJECTS SEEN: ${projectsSeen.length} / ${size(db)}`}
             </span>
           </div> : null}
         <a className="Navigation-github" href="http://github.com/art404/platform404" target="_blank">

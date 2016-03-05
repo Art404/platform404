@@ -163,7 +163,7 @@ class ProjectDetail extends React.Component {
     if (!project) return null
 
     return (
-      <div className={`ProjectDetail-outer-container --${agent}`} key={project.id}>
+      <div id={project.id} className={`ProjectDetail-outer-container --${agent}`} key={project.id}>
         <div className="ProjectDetail-inner-container" ref="inner">
           <section className="ProjectDetail-main-content">
             <article className="ProjectDetail-profile">

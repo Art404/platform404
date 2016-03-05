@@ -62,7 +62,7 @@ export class App extends Component {
     const {fixed} = this.state
 
     const menuProps = {params, main, squad, actions}
-    const navProps = {db, sideOpen, actions}
+    const navProps = {db, sideOpen, actions, client}
     const appClasses = cn('App', {
       '--fixed': fixed,
       '--mobile': agent === 'mobile',
