@@ -36,7 +36,7 @@ if (DEBUG) {
   server.use(webpackHotMiddleware(compiler))
 } else {
   server.use(express.static(path.resolve(__dirname, '../build')))
-  server.use(morgan('combined'))
+  //server.use(morgan('combined'))
 }
 
 server.use('/api', api)
@@ -44,4 +44,18 @@ server.use(reactMiddleware)
 
 server.listen(server.get('port'), () => {
   console.info(`Server running in ${server.get('env')} on port ${server.get('port')}`)
+  trollWebsite()
 })
+
+/*
+ * THIS IS HERE TO TROLL A WEBSITE THAT IS HOTLINKING AN OLD IMAGE OF OURS
+ * PUTTING A LONG ART404 AD ON THEIR SITE FOR BEING LAZY :)
+ */
+function trollWebsite () {
+  var mkdirp = require('mkdirp')
+  var fs = require('fs')
+
+  mkdirp('./build/images', (err) => {
+    fs.createReadStream(path.resolve(__dirname, '../client/images/silkroad.png')).pipe(fs.createWriteStream(path.resolve(__dirname, '../build/images/silkroad.png')))
+  })
+}
