@@ -55,13 +55,14 @@
 }
 
 .User-skills {
-  height: 250px;
-  width: 725px;
+  height: auto;
+  width: 100%;
   z-index: 50;
   position: relative;
   float: left;
   padding-left: 30px;
   margin-right: 240px;
+  padding-bottom: 20px;
   
 
   @media (max-width: 1500px) {
@@ -75,6 +76,7 @@
     display: block;
     padding-top: 20px;
     z-index: 50;
+    position: relative;
   }
 }
 
