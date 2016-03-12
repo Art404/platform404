@@ -242,12 +242,13 @@
     position: relative;
     min-width: 0;
     padding: 20px;
+    top: 0;
   }
   .User-section-title {
     font-size: 1em;
   }
   .User-profile-img {
-    top: 10px;
+    top: 30px;
     width: 110px !important;
     height: 250px !important;
     background-size: contain !important;
@@ -266,6 +267,7 @@
   }
   .User-bio {
     font-size: .6em;
+    font-family: Helvetica, Arial;
   }
   .User-skills {
     height: 250px;
@@ -286,6 +288,10 @@
     font-size: 1em;
     margin: 7px 13px 0 0;
     padding: 2px 15px 2px 10px;
+  }
+  .User-background {
+    margin-top: 20px;
+    left: -20px;
   }
   .User-social {
     padding-left: 0;

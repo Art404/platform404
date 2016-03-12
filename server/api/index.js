@@ -3,7 +3,7 @@ import Firebase from 'firebase'
 import MobileDetect from 'mobile-detect'
 import request from 'request'
 
-const fire = new Firebase('https://dev-platform404.firebaseio.com')
+const fire = new Firebase('https://platform404.firebaseio.com')
 const router = new express.Router()
 
 let snapshot = null
