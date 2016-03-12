@@ -135,6 +135,7 @@ class User extends React.Component {
           </p>
         </div>
         <div className="User-skills">
+          <div className="User-background"></div>
           <span className="User-section-title">{'SKILLS '}</span>
           {this.getUserSkills(userIndex)}
         </div>
@@ -149,8 +150,7 @@ class User extends React.Component {
             {squadState[userIndex].email}
           </div>
         </div>
-        <div className="User-background">
-        </div>
+        
       </div>
     )
   }
