@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import cn from 'classnames'
 import {isEqual, merge} from 'lodash'
+import assign from 'object-assign'
 import Navigation from '../../components/Navigation/Navigation'
 import MenuDesktop from '../../components/Menu/Menu'
 import MenuMobile from '../../components/Menu/MenuMobile'
@@ -62,7 +63,8 @@ export class App extends Component {
     const {fixed} = this.state
 
     const menuProps = {params, main, squad, actions}
-    const navProps = {db, sideOpen, actions, client}
+    const navProps = assign({}, {db}, {sideOpen}, {actions}, {'client': this.props.client})
+    //const navProps = {db, sideOpen, actions, client}
     const appClasses = cn('App', {
       '--fixed': fixed,
       '--mobile': agent === 'mobile',

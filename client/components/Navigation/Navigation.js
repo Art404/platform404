@@ -9,7 +9,12 @@ class Navigation extends React.Component {
   static propTypes = {
     'actions': PropTypes.object,
     'sideOpen': PropTypes.bool,
+    'client': PropTypes.object,
     'db': PropTypes.object
+  }
+
+  constructor (props) {
+    super(props)
   }
 
   closeMenu (sideOpen) {
@@ -17,9 +22,12 @@ class Navigation extends React.Component {
   }
 
   render () {
+    console.log('RENDERIN NAV ! ', this.props)
     const {sideOpen, actions, db, client} = this.props
     const {agent, cookie} = client
     const {projectsSeen} = cookie
+    console.log(this.props.client.cookie.projectsSeen)
+    console.log(projectsSeen)
     const hasProjects = agent === 'desktop' && projectsSeen && projectsSeen.length
 
     return (
