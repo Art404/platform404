@@ -1,24 +1,64 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {find, isEmpty, isEqual} from 'lodash'
 import Tweet from './Tweet'
 import Instagram from './Instagram'
 import Carousel from '../Carousel/Carousel'
 import ProjectRelated from './ProjectRelated'
+import Cookies from 'cookies-js'
+import {setClient} from '../../actions/AppActions'
 
 class ProjectDetail extends React.Component {
-  static displayName = 'ProjectDetail';
+  constructor (props, context) {
+    super(props, context)
+  }
+
+  static contextTypes = {
+    'client': PropTypes.object
+  }
+
+  static displayName = 'ProjectDetail'
 
   static propTypes = {
-    'db': React.PropTypes.object,
-    'agent': React.PropTypes.string,
-    'location': React.PropTypes.object,
-    'params': React.PropTypes.object,
-    'layout': React.PropTypes.string
-  };
+    'db': PropTypes.object,
+    'agent': PropTypes.string,
+    'location': PropTypes.object,
+    'params': PropTypes.object,
+    'layout': PropTypes.string
+  }
+
+  static defaultProps = {
+    'params': {
+      'projectID': 0
+    }
+  }
+
+  componentDidUpdate (props) {
+    console.log('CDU')
+    if (!isEqual(props.params.projectID, this.props.params.projectID)) {
+      this.checkCookie()
+    }
+  }
+
+  componentDidMount () {
+    this.checkCookie()
+  }
 
   shouldComponentUpdate (props) {
     if (isEmpty(this.props.db) && !isEmpty(props.db)) return true
     else return !isEqual(props.params, this.props.params)
+  }
+
+  checkCookie () {
+    const project = this.getProject(this.props.db, this.props.params.projectID)
+    const {projectsSeen} = this.context.client.cookie
+    if (!projectsSeen || !project) return
+
+    if (projectsSeen.indexOf(project.id) === -1) {
+      let {client} = this.context
+      client.cookie.projectsSeen.push(project.id)
+      setClient(client)
+      Cookies.set('art404', JSON.stringify({'projectsSeen': client.cookie.projectsSeen}))
+    }
   }
 
   getHashTags ({tags}) {
@@ -123,7 +163,7 @@ class ProjectDetail extends React.Component {
     if (!project) return null
 
     return (
-      <div className={`ProjectDetail-outer-container --${agent}`} key={project.id}>
+      <div id={project.id} className={`ProjectDetail-outer-container --${agent}`} key={project.id}>
         <div className="ProjectDetail-inner-container" ref="inner">
           <section className="ProjectDetail-main-content">
             <article className="ProjectDetail-profile">

@@ -2,7 +2,6 @@
 import React from 'react'
 import {findDOMNode} from 'react-dom'
 import request from 'superagent'
-import http from 'http'
 
 class Instagram extends React.Component {
   static propTypes = {
@@ -26,9 +25,10 @@ class Instagram extends React.Component {
 
   createInstagram () {
     const postUrl = this.props.embed
+    const {protocol, hostname, port} = window.location
 
     request
-      .get(`http://localhost:3000/api/getInsta?url=${postUrl}`)
+      .get(`${protocol}//${hostname}:${port}/api/getInsta?url=${postUrl}`)
       .end((err, res) => {
         if (err) console.error(err)
         else {

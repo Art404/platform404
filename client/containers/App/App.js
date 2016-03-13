@@ -1,4 +1,4 @@
-if (process.env.BROWSER) require('../../styles/_Main.scss');
+if (process.env.BROWSER) require('../../styles/_Main.scss')
 import * as AppActions from '../../actions/AppActions'
 import React, {Component, PropTypes, cloneElement} from 'react'
 import {bindActionCreators} from 'redux'
@@ -11,7 +11,7 @@ import MenuMobile from '../../components/Menu/MenuMobile'
 
 export class App extends Component {
   constructor (props, context) {
-    super(props, context);
+    super(props, context)
     this.state = {
       'fixed': false
     }
@@ -24,7 +24,18 @@ export class App extends Component {
     'filter': PropTypes.string,
     'route': PropTypes.object.isRequired,
     'layout': PropTypes.object.isRequired,
-    'app': PropTypes.object.isRequired
+    'app': PropTypes.object.isRequired,
+    'client': PropTypes.object.isRequired
+  }
+
+  static childContextTypes = {
+    'client': PropTypes.object
+  }
+
+  getChildContext () {
+    return {
+      'client': this.props.client
+    }
   }
 
   componentDidMount () {
@@ -44,13 +55,14 @@ export class App extends Component {
   }
 
   render () {
-    const {app, children, params, layout, actions} = this.props
-    const {agent, main, squad} = app
+    const {app, children, params, layout, actions, client} = this.props
+    const {main, squad, db} = app
+    const {agent} = client
     const {sideOpen} = layout
     const {fixed} = this.state
 
     const menuProps = {params, main, squad, actions}
-    const navProps = {agent, sideOpen, actions}
+    const navProps = {db, sideOpen, actions, client}
     const appClasses = cn('App', {
       '--fixed': fixed,
       '--mobile': agent === 'mobile',
@@ -78,6 +90,7 @@ export class App extends Component {
 function mapStateToProps (state) {
   return {
     'app': state.app,
+    'client': state.client,
     'layout': state.layout
   }
 }

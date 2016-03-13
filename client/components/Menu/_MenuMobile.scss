@@ -18,7 +18,7 @@
   text-transform: capitalize;
   font-weight: 500;
   color: inherit;
-  font-family: 'Roboto', 'open sans';
+  font-family: 'open sans';
   padding-left: $PADDING_MOBILE;
 }
 
@@ -35,19 +35,19 @@
   left: 5px;
   margin: 5px 0 0 5px;
   &.code {
-    background-image: url('../images/code_icon.png');
+    background-image: url('../images/apps_icon.png');
   }
   &.installation {
-    background-image: url('../images/installation_icon.png');
+    background-image: url('../images/installations_icon.png');
   }
   &.performance {
     background-image: url('../images/performance_icon.png');
   }
   &.sculpture {
-    background-image: url('../images/sculpture_icon.png');
+    background-image: url('../images/sculptures_icon.png');
   }
   &.video {
-    background-image: url('../images/video_icon.png');
+    background-image: url('../images/videos_icon.png');
   }
   background-size: 60%;
   background-position: center;

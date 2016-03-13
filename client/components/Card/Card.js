@@ -1,26 +1,42 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 import cn from 'classnames'
 
 class Card extends React.Component {
-  static displayName = 'Card';
+  constructor (props, context) {
+    super(props, context)
+  }
+
+  static contextTypes = {
+    'client': PropTypes.object
+  }
+
+  static displayName = 'Card'
 
   static propTypes = {
-    'project': React.PropTypes.object,
-    'layout': React.PropTypes.object
-  };
+    'project': PropTypes.object,
+    'layout': PropTypes.object
+  }
 
   static defaultProps = {
     'project': {},
     'layout': {}
-  };
+  }
+
+  checkSeen (project, client) {
+    if (!client.cookie || !project) return false
+    else return client.cookie.projectsSeen.indexOf(project.id) > -1
+  }
 
   render() {
     const {layout, project} = this.props
+    const {client} = this.context
+    const seen = this.checkSeen(project, client)
     const cardClasses = cn('Card', {
       '--framed': layout.framed,
       '--landscape': layout.landscape,
-      '--tall': layout.tall
+      '--tall': layout.tall,
+      '--seen': seen
     })
 
     return (

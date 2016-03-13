@@ -1,8 +1,11 @@
 import * as types from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
-import http from 'http'
 
-const agent = new http.Agent({ keepAlive: true })
+export function setClient (client) {
+  return (dispatch) => {
+    return dispatch({'type': types.SET_CLIENT, 'client': client})
+  }
+}
 
 export function toggleSidebar (sideOpen) {
   return (dispatch) => {
@@ -11,7 +14,7 @@ export function toggleSidebar (sideOpen) {
 }
 
 export function fetchFireSuccess (json) {
-  return {'type': types.FETCH_FIRE_SUCCESS, 'fire': json};
+  return {'type': types.FETCH_FIRE_SUCCESS, 'fire': json}
 }
 
 export function fetchFire () {

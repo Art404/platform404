@@ -23,11 +23,21 @@ class Squad extends React.Component {
         <Link className="Squad-about" to="/about" onClick={this.closeMenu.bind(this, mobile)}>
           {'ABOUT'}
         </Link>
-        {this.props.squad.map((s, i) => (
-          <Link className="Squad-member" to={`/user/${s.name}`} onClick={this.closeMenu.bind(this, mobile)} key={i}>
-            {s.name}
-          </Link>
-        ))}
+        {this.props.squad.map((s, i) => {
+          if (s.url[0] === '/') {
+            return (
+              <Link className="Squad-member" to={`/user/${s.name}`} onClick={this.closeMenu.bind(this, mobile)} key={i}>
+                {s.name}
+              </Link>
+            )
+          } else {
+            return (
+              <a className="Squad-member" href={s.url} key={i}>
+                {s.name}
+              </a>
+            )
+          }
+        })}
       </div>
     )
   }

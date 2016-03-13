@@ -15,6 +15,13 @@
   position: relative;
 }
 
+.Card.--seen {
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .Card-flex-container {
   @include display(flex);
   @include flex-direction(column);
@@ -197,6 +204,23 @@
   &:hover { opacity: 1;}
 }
 
+<<<<<<< HEAD
+=======
+.Card-stats-container {
+  width: 60px;
+  height: 15px;
+  opacity: 0.5;
+  background-image: url('../images/stars_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+
+>>>>>>> master
 /*
  * CARD LAYOUT OVERRIDES
  */

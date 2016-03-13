@@ -1,9 +1,8 @@
 import express from 'express'
 import Firebase from 'firebase'
-import MobileDetect from 'mobile-detect'
 import request from 'request'
 
-const fire = new Firebase('https://platform404.firebaseio.com')
+const fire = new Firebase(process.env.firebase_url)
 const router = new express.Router()
 
 let snapshot = null
@@ -13,9 +12,7 @@ fire.on('value', (data) => {
 })
 
 router.get('/getDB', (req, res) => {
-  const md = new MobileDetect(global.ua)
-  const agent = md.mobile() ? 'mobile' : 'desktop'
-  res.send({agent, ... snapshot}).end()
+  res.send(snapshot).end()
 })
 
 router.get('/getInsta', (req, res) => {

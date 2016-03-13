@@ -1,5 +1,5 @@
 {
-  "name": "iso-boiler404",
+  "name": "platform404",
   "version": "1.0.0",
   "scripts": {
     "build": "NODE_ENV=production webpack -c --progress",
@@ -31,12 +31,15 @@
     "babel-preset-stage-0": "~6.5.0",
     "classnames": "~2.2.3",
     "compression": "~1.6.1",
+    "cookie-parser": "^1.4.1",
+    "cookies-js": "^1.2.2",
     "cors": "^2.7.1",
     "css-loader": "~0.23.1",
     "express": "~4.13.4",
     "extract-text-webpack-plugin": "~1.0.1",
     "file-loader": "~0.8.5",
     "firebase": "^2.4.1",
+    "history": "^2.0.0",
     "isomorphic-fetch": "~2.2.1",
     "jade": "~1.11.0",
     "json-loader": "^0.5.4",
