@@ -18,7 +18,7 @@ class User extends React.Component {
 
   static propTypes = {
     'squad': React.PropTypes.array
-  }
+}
 
   createSquad (squad) {
     return squad.map((s, i) => (
@@ -56,6 +56,7 @@ class User extends React.Component {
   }
 
   getUser(squad, id) {
+    squad = cloneDeep(squad)
     id = id.toLowerCase()
     squad = squad.map((s) => {
       s.name = s.name.toLowerCase()
