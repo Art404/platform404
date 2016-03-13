@@ -24,7 +24,7 @@ class Squad extends React.Component {
           {'ABOUT'}
         </Link>
         {this.props.squad.map((s, i) => {
-          if (s.url[0] === '/') {
+          if (s.hasBio) {
             return (
               <Link className="Squad-member" to={`/user/${s.name}`} onClick={this.closeMenu.bind(this, mobile)} key={i}>
                 {s.name}

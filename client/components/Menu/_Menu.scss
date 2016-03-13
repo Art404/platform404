@@ -2,7 +2,6 @@
 
 .Menu {
   position: absolute;
-<<<<<<< HEAD
   left: 15px;
   float: left;
   font-family: "neuzeit_groteskblack";
@@ -11,20 +10,6 @@
   cursor: pointer;
   top: $NAV_HEIGHT;
   height: auto;
-=======
-  left: 0;
-  float: left;
-  font-family: "neuzeit_groteskblack";
-  font-size: 10px;
-  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  z-index: 99999999;
-  // background: rgba(245, 245, 245, 0.95);
-  cursor: pointer;
-  top: $NAV_HEIGHT;
-  height: auto;
-  background: white;
->>>>>>> master
 }
 
 .Menu-inner {
@@ -34,30 +19,18 @@
   margin: 0;
   padding: 0;
   list-style: none;
-<<<<<<< HEAD
   -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
   margin-bottom: 5px;
   background: white;
-=======
-  background: white;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-  margin-bottom: 3px;
->>>>>>> master
 }
 
 .Menu-item {
   width: 100%;
   position: absolute;
-<<<<<<< HEAD
   z-index: 10;
   height: $MENU_ITEM_HEIGHT;
   background: white;
-=======
-  background: white;
-  z-index: 10;
-  height: $MENU_ITEM_HEIGHT;
->>>>>>> master
 }
 
 .Menu-link {
@@ -69,17 +42,10 @@
   @include display(flex);
   @include align-items(center);
   @include flex(1 0 0);
-<<<<<<< HEAD
   color: #8A7D91;
   &:hover,
   &.--active {
     background: #1A0D1E;
-=======
-  color: black;
-  &:hover,
-  &.--active {
-    background: black;
->>>>>>> master
     color: white;
   }
 }
@@ -116,23 +82,15 @@
 }
 
 .Menu-label {
-<<<<<<< HEAD
   font-family: 'Roboto', 'Open Sans', 'sans-serif';
-=======
-  font-family: "Open Sans", 'sans-serif';
->>>>>>> master
   font-size: 16px;
   font-weight: 500;
 }
 
 .Menu-item-icon-wrap {
   position: relative;
-<<<<<<< HEAD
   width: 50px;
   padding-right: 10px;
-=======
-  width: 70px;
->>>>>>> master
   height: $MENU_ITEM_HEIGHT;
   @include display(flex);
   @include align-items(center);
@@ -147,18 +105,11 @@
     text-transform: uppercase;
     font-size: 20px;
     text-align: left;
-<<<<<<< HEAD
     padding-left: 17px;
     font-size: 2.3em;
   }
   .Menu-link {
     background: #231F20;
-=======
-    padding-left: 20px;
-  }
-  .Menu-link {
-    background: black;
->>>>>>> master
     color: white;
   }
   .Menu-item-icon-wrap {
@@ -168,58 +119,31 @@
 
 .code {
   .Menu-item-icon {
-<<<<<<< HEAD
     background-image: url('../images/code_icon.png');
   }
   .Menu-link:hover .Menu-item-icon,
   .Menu-link.--active .Menu-item-icon {
     background-image: url('../images/code_icon_white.png');
-=======
-    background-image: url('../images/apps_icon.png');
-  }
-  .Menu-link:hover .Menu-item-icon,
-  .Menu-link.--active .Menu-item-icon {
-    background-image: url('../images/apps_icon_white.png');
-    border: 3px solid white;
->>>>>>> master
   }
 }
 
 .sculpture {
   .Menu-item-icon {
-<<<<<<< HEAD
     background-image: url('../images/sculpture_icon.png');
   }
   .Menu-link:hover .Menu-item-icon,
   .Menu-link.--active .Menu-item-icon {
     background-image: url('../images/sculpture_icon_white.png');
-=======
-    background-image: url('../images/sculptures_icon.png');
-  }
-  .Menu-link:hover .Menu-item-icon,
-  .Menu-link.--active .Menu-item-icon {
-    background-image: url('../images/sculptures_icon_white.png');
-    border: 3px solid white;
->>>>>>> master
   }
 }
 
 .installation {
   .Menu-item-icon {
-<<<<<<< HEAD
     background-image: url('../images/installation_icon.png');
   }
   .Menu-link:hover .Menu-item-icon,
   .Menu-link.--active .Menu-item-icon {
     background-image: url('../images/installation_icon_white.png');
-=======
-    background-image: url('../images/installations_icon.png');
-  }
-  .Menu-link:hover .Menu-item-icon,
-  .Menu-link.--active .Menu-item-icon {
-    background-image: url('../images/installations_icon_white.png');
-    border: 3px solid white;
->>>>>>> master
   }
 }
 
@@ -230,45 +154,24 @@
   .Menu-link:hover .Menu-item-icon,
   .Menu-link.--active .Menu-item-icon {
     background-image: url('../images/performance_icon_white.png');
-<<<<<<< HEAD
-=======
-    border: 3px solid white;
->>>>>>> master
   }
 }
 
 .video {
   .Menu-item-icon {
-<<<<<<< HEAD
     background-image: url('../images/video_icon.png');
   }
   .Menu-link:hover .Menu-item-icon,
   .Menu-link.--active .Menu-item-icon {
     background-image: url('../images/video_icon_white.png');
-=======
-    background-image: url('../images/videos_icon.png');
-  }
-  .Menu-link:hover .Menu-item-icon,
-  .Menu-link.--active .Menu-item-icon {
-    background-image: url('../images/videos_icon_white.png');
-    border: 3px solid white;
->>>>>>> master
   }
 }
 
 .Menu-item-icon {
   display: block;
-<<<<<<< HEAD
   width: calc(#{$MENU_ITEM_HEIGHT} - 6px);
   height: calc(#{$MENU_ITEM_HEIGHT} - 6px);
   background-size: 100%;
-=======
-  width: calc(#{$MENU_ITEM_HEIGHT} - 10px);
-  height: calc(#{$MENU_ITEM_HEIGHT} - 10px);
-  border-radius: 50%;
-  border: 3px solid black;
-  background-size: 70%;
->>>>>>> master
   background-repeat: no-repeat;
   background-position: center;
 }

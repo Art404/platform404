@@ -1,22 +1,23 @@
 import React from 'react'
-import {isEmpty, uniq, cloneDeep, each} from 'lodash'
-import Grid from '../Grid/Grid'
-import Squad_Fixtures from '../../FIXTURES/platform404-squad-export.json'
+import {isEmpty, uniq, cloneDeep, each, find} from 'lodash'
+import path from 'path'
+
+// TODO: figure out how to load these locally
+const iconMap = {
+  'behance': 'https://db.tt/w8HSNeZn',
+  'facebook': 'https://db.tt/zeZdD9D6',
+  'github': 'https://db.tt/W1LhwSsE',
+  'instagram': 'https://db.tt/gFHQ2bed',
+  'linkedin': 'https://db.tt/7ZZd4Gvo',
+  'tumblr': 'https://db.tt/lYipN80L',
+  'twitter': 'https://db.tt/6sr5ZeVl'
+}
 
 class User extends React.Component {
-  static displayName = 'User';
+  static displayName = 'User'
 
   static propTypes = {
-    'db': React.PropTypes.object,
     'squad': React.PropTypes.array
-  };
-
-
-  constructor (props) {
-    super(props)
-    this.state = {
-      'squadState': Squad_Fixtures
-    }
   }
 
   createSquad (squad) {
@@ -31,96 +32,47 @@ class User extends React.Component {
     ))
   }
 
-  getUserSocial (userIndex) {
-    const {squadState} = this.state
+  getUserSocial (squadMember) {
+    return Object.keys(squadMember.social).map((s, i) => {
+      const socialIcon = iconMap[s]
+      const socialLink = squadMember.social[s]
 
-    const beIcon = 'https://db.tt/w8HSNeZn',
-          facebookIcon = 'https://db.tt/zeZdD9D6',
-          githubIcon = 'https://db.tt/W1LhwSsE',
-          instaIcon = 'https://db.tt/gFHQ2bed',
-          linkedIcon = 'https://db.tt/7ZZd4Gvo',
-          tumblrIcon = 'https://db.tt/lYipN80L',
-          twitterIcon = 'https://db.tt/6sr5ZeVl'
-
-    let social = []
-
-    Object.keys(squadState[userIndex].social).forEach((s, i) => {
-      console.log('SOCIAL-MEDIA: ', s)
-      let socialLink = squadState[userIndex].social[s],
-          socialIcon
-
-      switch (s) {
-        case 'behance':
-          socialIcon = beIcon
-          break
-        case 'facebook':
-          socialIcon = facebookIcon
-          break
-        case 'github':
-          socialIcon = githubIcon
-          break
-        case 'instagram':
-          socialIcon = instaIcon
-          break
-        case 'linked-in':
-          socialIcon = linkedIcon
-          break
-        case 'tumblr':
-          socialIcon = tumblrIcon
-          break
-        case 'twitter':
-          socialIcon = twitterIcon
-          break
-        default:
-          socialIcon = twitterIcon
-      }
-
-      social.push (
+      return (
         <a href={socialLink} key={i} className="User-social-link">
           <img src={socialIcon}/>
         </a>
       )
     })
-
-    return social
   }
 
-  getUserSkills (userIndex) {
-    const {squadState} = this.state
-
-    let skills = []
-    console.log(squadState)
-
-    squadState[userIndex].skills.forEach((s, i) => {
-      skills.push(
+  getUserSkills (squadMember) {
+    return squadMember.skills.map((s, i) => {
+      return (
         <span key={i} className="User-skills-single">
           {s.toUpperCase()}
         </span>
       )
     })
+  }
 
-    return skills
+  getUser(squad, id) {
+    id = id.toLowerCase()
+    squad = squad.map((s) => {
+      s.name = s.name.toLowerCase()
+      return s
+    })
+
+    return find(squad, 'name', id)
   }
 
   render () {
-    if (isEmpty(this.props.db)) return null
-    const {db, squad} = this.props,
-          { squadState } = this.state,
-          { userID } = this.props.params
-
-    let userIndex
-    if (userID === 'Manny' || userID === 'manny') {
-      userIndex = 0
-    } else if ( userID === 'Moises' || userID ===  'mosies') {
-      userIndex = 1
-    } else if ( userID === 'Alyssa' || userID ===  'alyssa') {
-      userIndex = 2
-    } else if ( userID === 'Micah' || userID ===  'micah') {
-      userIndex = 3
-    }
+    const {squad} = this.props
+    const {userID} = this.props.params
+    const squadMember = this.getUser(squad, userID)
+    if (!squadMember) return null
 
     const userProfileStyles = {
-      'backgroundImage': `url(${squadState[userIndex].image})`,
+      'backgroundImage': `url(${squadMember.image})`,
       'backgroundSize': 'cover',
       'backgroundPosition': 'center'
     }
@@ -129,28 +81,27 @@ class User extends React.Component {
       <div className="User">
         <div className="User-profile-img" style={userProfileStyles}/>
         <div className="User-blurb">
-          <h3 className="User-section-title">{squadState[userIndex].fullname}</h3>
+          <h3 className="User-section-title">{squadMember.fullname}</h3>
           <p className="User-bio">
-            {squadState[userIndex].shortBio}
+            {squadMember.shortBio}
           </p>
         </div>
         <div className="User-skills">
           <div className="User-background"></div>
           <span className="User-section-title">{'SKILLS '}</span>
-          {this.getUserSkills(userIndex)}
+          {this.getUserSkills(squadMember)}
         </div>
         <div className="User-social">
           <div className="User-section-title">{'SOCIAL'}</div>
-          {this.getUserSocial(userIndex)}
+          {this.getUserSocial(squadMember)}
         </div>
         <div className="User-contact">
           <div className="User-email">
             <div className="User-section-title">{'CONTACT'}</div>
             <span className="User-email-icn" />
-            {squadState[userIndex].email}
+            {squadMember.email}
           </div>
         </div>
-        
       </div>
     )
   }

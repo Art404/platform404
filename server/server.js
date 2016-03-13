@@ -44,7 +44,6 @@ server.use(reactMiddleware)
 
 server.listen(server.get('port'), () => {
   console.info(`Server running in ${server.get('env')} on port ${server.get('port')}`)
-})
   trollWebsite()
 })
 
