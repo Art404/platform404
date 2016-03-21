@@ -2,6 +2,7 @@ import express from 'express'
 import Firebase from 'firebase'
 import request from 'request'
 
+
 const fire = new Firebase(process.env.firebase_url)
 const router = new express.Router()
 
